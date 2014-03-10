@@ -28,7 +28,7 @@ route(function (map) {
   });
 }, function getId() {
   var html = document.documentElement;
-  return html.dataset('pageId');
+  return html.dataset.pageId;
 });
 ```
 
