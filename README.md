@@ -30,7 +30,7 @@ route(function (map) {
   var html = document.documentElement;
   return html.dataset('pageId');
 });
-```js
+```
 
 
 each route:
