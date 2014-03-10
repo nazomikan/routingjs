@@ -44,7 +44,7 @@
       , Module
       ;
 
-    modules = module.concat(widgets, cores);
+    modules = modules.concat(widgets, cores);
 
     for (i = 0, iz = modules.length; i < iz; i++) {
       Module = parse(modules[i]);
