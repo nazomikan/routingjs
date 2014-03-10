@@ -29,13 +29,17 @@
     }
 
     mapping = parse(config.to);
-    this.core.concat(mapping.core || []);
-    this.widget.concat(mapping.widget || []);
+    this.core = this.core.concat(mapping.core || []);
+    this.widget = this.widget.concat(mapping.widget || []);
 
     doc.addEventListener('DOMContentLoaded', function () {
       dispatch(that.core, that.widget);
     }, false);
+
+    this.isAlreadyDispatch = true;
   };
+
+
 
   function dispatch(widgets, cores) {
     var i
