@@ -46,13 +46,18 @@
       , iz
       , modules = []
       , Module
+      , module
       ;
 
     modules = modules.concat(widgets, cores);
 
     for (i = 0, iz = modules.length; i < iz; i++) {
       Module = parse(modules[i]);
-      (new Module).build();
+      module = new Module();
+      if (!module.build) {
+        throw new Error(modules[i] + ' does not have #build api');
+      }
+      module.build();
     }
   }
 
